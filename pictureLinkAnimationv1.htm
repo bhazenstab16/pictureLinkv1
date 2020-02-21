@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manipulating Element Attributes</title>
+    <link rel="stylesheet" href="./../../style.css" />
+    <script type="text/javascript" src="./../../jquery-3.0.0.js"></script>
+    <script type="text/javascript">
+			$("document").ready(function()
+			{
+				$("img").hover(zoom);
+				$("#grassPic").click(function() 
+				{
+					$("#list2").slideUp("fast");
+					$("#list3").slideUp("fast");
+					$("#list4").slideUp("fast");
+					$("#list5").slideUp("fast");
+					$("#list1").slideToggle("slow");
+				});
+				$("#leafPic").click(function() 
+				{
+					$("#list1").slideUp(1);
+					$("#list3").slideUp(1);
+					$("#list4").slideUp(1);
+					$("#list5").slideUp(1);
+					$("#list2").slideToggle("slow");
+				});
+				$("#springPic").click(function() 
+				{
+					$("#list2").slideUp(1);
+					$("#list1").slideUp(1);
+					$("#list4").slideUp(1);
+					$("#list5").slideUp(1);
+					$("#list3").slideToggle("slow");
+				});
+				$("#waterPic").click(function() 
+				{
+					$("#list2").slideUp(1);
+					$("#list3").slideUp(1);
+					$("#list1").slideUp(1);
+					$("#list5").slideUp(1);
+					$("#list4").slideToggle("slow");
+				});
+				$("#volcanoPic").click(function() 
+				{
+					$("#list2").slideUp(1);
+					$("#list3").slideUp(1);
+					$("#list4").slideUp(1);
+					$("#list1").slideUp(1);
+					$("#list5").slideToggle("slow");
+				});
+			});
+		function showList1()
+		{
+			$("#list1").removeAttr("hidden");
+			$("#list2").attr("hidden", "true");
+			$("#list3").attr("hidden", "true");
+			$("#list4").attr("hidden", "true");
+			$("#list5").attr("hidden", "true");
+		}
+		function showList2()
+		{
+			$("#list2").removeAttr("hidden");
+			$("#list1").attr("hidden", "true");
+			$("#list3").attr("hidden", "true");
+			$("#list4").attr("hidden", "true");
+			$("#list5").attr("hidden", "true");
+		}
+		function showList3()
+		{
+			$("#list3").removeAttr("hidden");
+			$("#list2").attr("hidden", "true");
+			$("#list1").attr("hidden", "true");
+			$("#list4").attr("hidden", "true");
+			$("#list5").attr("hidden", "true");
+		}
+		function showList4()
+		{
+			$("#list4").removeAttr("hidden");
+			$("#list2").attr("hidden", "true");
+			$("#list3").attr("hidden", "true");
+			$("#list1").attr("hidden", "true");
+			$("#list5").attr("hidden", "true");
+		}
+		function showList5()
+		{
+			$("#list5").removeAttr("hidden");
+			$("#list2").attr("hidden", "true");
+			$("#list3").attr("hidden", "true");
+			$("#list4").attr("hidden", "true");
+			$("#list1").attr("hidden", "true");
+		}
+		function zoom()
+		{
+			$("img").toggleClass("smooth");
+		}
+    </script>
+    <style type="text/css">
+        img 
+		{
+            margin: 24px;
+            width: 250px;
+            height: 200px;
+			cursor: pointer;
+        }
+		.smooth:hover
+		{
+			transform: scale(1.05);
+			border-style: solid;
+		}
+		a:link
+		{
+			text-decoration: none;
+		}
+		.list
+		{
+			background-color: gray;
+			border: 1px solid green;
+			color: green;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 16px;
+			cursor: pointer;
+			width: 150px;
+		}
+		.list a:hover
+		{
+			background-color: white;
+			border: 1px solid black;
+			display: block;
+			
+		}
+    </style>
+</head>
+
+<body>
+    <div id="example">
+		<img src="images/Grass.jpg" alt="Grass" id="grassPic"/>
+        <img src="images/Leaf.jpg" alt="Leaf" id="leafPic" />
+        <img src="images/Spring.jpg" alt="Springtime" id="springPic" />
+        <img src="images/Water.jpg" alt="Water" id="waterPic" />
+		<img src="images/Volcano.png" alt="Volcano" id="volcanoPic" />
+    </div>
+		<div id="list1" class="list" hidden>
+			<a href="https://simple.wikipedia.org/wiki/Grass" target="_blank" id="item1">Grass 1</a><br><br> <!-- animate highlight for each list, change hover color for each list too-->
+			<a href="https://en.wikipedia.org/wiki/Poaceae" target="_blank">Grass 2</a><br><br>
+			<a href="https://en.wikipedia.org/wiki/Cortaderia_selloana" target="_blank">Grass 3</a><br><br>
+			<a href="https://en.wikipedia.org/wiki/Festuca" target="_blank">Grass 4</a><br><br>
+			<a href="https://en.wikipedia.org/wiki/Cynodon_dactylon" target="_blank">Grass 5</a><br><br>
+		</div>
+		<div id="list2" class="list" hidden>
+			<a href="https://naruto.fandom.com/wiki/Konohagakure" target="_blank">Leaf 1</a><br><br>
+			<a href="https://www.crwflags.com/fotw/flags/ca.html" target="_blank">Leaf 2</a><br><br>
+			<a href="https://www.friendsofthewildflowergarden.org/pages/plants/oakleafkey.html" target="_blank">Leaf 3</a><br><br>
+			<a href="https://www.webmd.com/vitamins/ai/ingredientmono-352/birch" target="_blank">Leaf 4</a><br><br>
+			<a href="https://www.wikihow.com/Identify-Hickory-Trees" target="_blank">Leaf 5</a><br><br>
+		</div>
+		<div id="list3" class="list" hidden>
+			<a href="http://justfunfacts.com/interesting-facts-about-spring/" target="_blank">Spring 1</a><br><br>
+			<a href="https://kidskonnect.com/holidays-seasons/spring/" target="_blank">Spring 2</a><br><br>
+			<a href="https://www.kidsplayandcreate.com/what-happens-in-spring-when-is-spring-spring-facts-for-kids/" target="_blank">Spring 3</a><br><br>
+			<a href="https://www.1800flowers.com/blog/floral-occasions-holidays/facts-about-spring/" target="_blank">Spring 4</a><br><br>
+			<a href="https://piperelectric.com/2015/04/24/12-interesting-facts-about-spring/" target="_blank">Spring 5</a><br><br>
+		</div>
+		<div id="list4" class="list" hidden>
+			<a href="https://www.seametrics.com/blog/water-facts/" target="_blank">Water 1</a><br><br>
+			<a href="https://www.espwaterproducts.com/water-facts/" target="_blank">Water 2</a><br><br>
+			<a href="https://www3.epa.gov/safewater/kids/waterfactsoflife.html" target="_blank">Water 3</a><br><br>
+			<a href="https://www.treehugger.com/clean-water/36-eye-opening-facts-about-water.html" target="_blank">Water 4</a><br><br>
+			<a href="http://savethewater.org/education-resources/water-facts/" target="_blank">Water 5</a><br><br>
+		</div>
+		<div id="list5" class="list" hidden>
+			<a href="http://www.sciencekids.co.nz/sciencefacts/earth/volcano.html" target="_blank">Volcano 1</a><br><br>
+			<a href="https://www.nationalgeographic.com/environment/natural-disasters/volcanoes/" target="_blank">Volcano 2</a><br><br>
+			<a href="https://www.dosomething.org/us/facts/11-facts-about-volcanoes" target="_blank">Volcano 3</a><br><br>
+			<a href="https://www.universetoday.com/32185/10-interesting-facts-about-volcanoes/" target="_blank">Volcano 4</a><br><br>
+			<a href="https://www.livescience.com/31774-amazing-volcano-facts.html" target="_blank">Volcano 5</a><br><br>
+		</div>
+</body>
+</html>
